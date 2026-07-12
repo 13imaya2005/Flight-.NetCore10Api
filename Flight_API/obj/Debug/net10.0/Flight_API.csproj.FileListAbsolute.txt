@@ -147,6 +147,7 @@ D:\Flight Project\Flight Solution\Flight_API\obj\Debug\net10.0\Flight_API.Assemb
 D:\Flight Project\Flight Solution\Flight_API\obj\Debug\net10.0\Flight_API.csproj.CoreCompileInputs.cache
 D:\Flight Project\Flight Solution\Flight_API\obj\Debug\net10.0\Flight_API.MvcApplicationPartsAssemblyInfo.cs
 D:\Flight Project\Flight Solution\Flight_API\obj\Debug\net10.0\Flight_API.MvcApplicationPartsAssemblyInfo.cache
+D:\Flight Project\Flight Solution\Flight_API\obj\Debug\net10.0\Flight_API.sourcelink.json
 D:\Flight Project\Flight Solution\Flight_API\obj\Debug\net10.0\rjimswa.dswa.cache.json
 D:\Flight Project\Flight Solution\Flight_API\obj\Debug\net10.0\rjsmrazor.dswa.cache.json
 D:\Flight Project\Flight Solution\Flight_API\obj\Debug\net10.0\rjsmcshtml.dswa.cache.json
