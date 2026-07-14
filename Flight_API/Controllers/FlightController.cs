@@ -55,9 +55,9 @@ public class FlightController : ControllerBase
     }
 
     [HttpDelete("Delete/{flightId}")]
-    public async Task<IActionResult> Delete(int id)
+    public async Task<IActionResult> Delete(int flightId )
     {
-        var result = await _service.DeleteAsync(id);
+        var result = await _service.DeleteAsync(flightId);
 
         if (!result)
             return NotFound();

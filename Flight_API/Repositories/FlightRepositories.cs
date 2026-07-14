@@ -42,7 +42,7 @@ public class FlightRepositories : IFlightRepository
             new SqlParameter("@IsActive", (object?)flightMaster.IsActive ?? DBNull.Value)
         );
 
-        return result;
+        return result;// returns affected rows
     }
 
     public async Task<bool> UpdateAsync(FlightMaster flightMaster)
