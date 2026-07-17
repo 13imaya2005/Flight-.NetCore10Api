@@ -20,6 +20,15 @@ var builder = WebApplication.CreateBuilder(args);
         // Add services to the container.
         builder.Services.AddControllers();// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi//builder.Services.AddOpenApi();
         builder.Services.AddEndpointsApiExplorer();
+        builder.Services.AddCors(options =>
+        {
+           options.AddPolicy("AllowAngular", policy =>
+           {
+             policy.AllowAnyOrigin()
+                   .AllowAnyHeader()
+                   .AllowAnyMethod();
+           });
+        });
 
         var jwtKey = builder.Configuration["Jwt:Key"] ?? "v2UJQxTrwUCqqJkehkxvSUZKQCX6gNmRWq7q1bWa3Jw=";
 
@@ -47,28 +56,14 @@ var builder = WebApplication.CreateBuilder(args);
 
 
                 ValidateIssuer = true,
-
-
                 ValidateAudience = false,
-
-
                 ValidateLifetime = true,
-
                 ValidateIssuerSigningKey = true,
-
-
                 ValidIssuer = jwtIssuer,
-
-
                 IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtKey))
-
-
             };
 
-
         });
-
-
         builder.Services.AddSwaggerGen(c =>
         {
 
@@ -106,9 +101,9 @@ var builder = WebApplication.CreateBuilder(args);
         //if (app.Environment.IsDevelopment())
        
          app.MapOpenApi();
-        
-        app.UseAuthorization();
-
+         app.UseCors("AllowAngular");
+         app.UseAuthentication();
+app.UseAuthorization();
         app.MapControllers();
 
 app.Run();

@@ -1,7 +1,7 @@
 [
   {
     "ContainingType": "Flight_API.Controllers.FlightController",
-    "Method": "Add",
+    "Method": "Create",
     "RelativePath": "api/Flight/Create",
     "HttpMethod": "POST",
     "IsController": true,
@@ -18,13 +18,13 @@
   {
     "ContainingType": "Flight_API.Controllers.FlightController",
     "Method": "Delete",
-    "RelativePath": "api/Flight/Delete/{flightId}",
+    "RelativePath": "api/Flight/Delete/{FlightId}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "flightId",
+        "Name": "FlightId",
         "Type": "System.Int32",
         "IsRequired": true
       }
@@ -90,13 +90,13 @@
   {
     "ContainingType": "Flight_API.Controllers.FlightController",
     "Method": "GetById",
-    "RelativePath": "api/Flight/GetById/{flightId}",
+    "RelativePath": "api/Flight/GetById/{FlightId}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "flightId",
+        "Name": "FlightId",
         "Type": "System.Int32",
         "IsRequired": true
       }

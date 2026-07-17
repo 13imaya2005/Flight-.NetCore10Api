@@ -48,14 +48,14 @@
         }
       }
     },
-    "/api/Flight/GetById/{flightId}": {
+    "/api/Flight/GetById/{FlightId}": {
       "get": {
         "tags": [
           "Flight"
         ],
         "parameters": [
           {
-            "name": "flightId",
+            "name": "FlightId",
             "in": "path",
             "required": true,
             "schema": {
@@ -113,14 +113,14 @@
         }
       }
     },
-    "/api/Flight/Delete/{flightId}": {
+    "/api/Flight/Delete/{FlightId}": {
       "delete": {
         "tags": [
           "Flight"
         ],
         "parameters": [
           {
-            "name": "flightId",
+            "name": "FlightId",
             "in": "path",
             "required": true,
             "schema": {

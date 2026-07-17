@@ -19,52 +19,169 @@ public class FlightController : ControllerBase
     }
 
     [HttpPost("Create")]
-    public async Task<IActionResult> Add(FlightDto dto)
+    public async Task<IActionResult> Create(FlightDto dto)
     {
-        var id = await _service.AddAsync(dto);
-        return Ok(id);
+        try
+        {
+            var id = await _service.AddAsync(dto);
+
+            return Ok(new ApiResponse<int>
+            {
+                Success = true,
+                Message = "Item created successfully",
+                Data = id
+            });
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, new ApiResponse<string>
+            {
+                Success = false,
+                Message = "Error creating item",
+                Error = new ApiError
+                {
+                    Code = "500",
+                    Details = ex.Message
+                }
+            });
+        }
     }
 
     [HttpGet("GetAll")]
     public async Task<IActionResult> GetAll()
     {
-        var result = await _service.GetAllAsync();
-        return Ok(result);
+        try
+        {
+            var data = await _service.GetAllAsync();
+            return Ok(new ApiResponse<IEnumerable<FlightDto>>
+            {
+                Success = true,
+                Message = "Flight retrieved successfully",
+                Data = data
+            });
+        }
+        catch (Exception ex)
+        {
+
+            return StatusCode(500, new ApiResponse<string>
+            {
+                Success = false,
+                Message = "Error retrieving Flight",
+                Error = new ApiError
+                {
+                    Code = "500",
+                    Details = ex.Message
+                }
+            });
+        }
     }
-
-    [HttpGet("GetById/{flightId}")]
-    public async Task<IActionResult> GetById(int flightId)
+    [HttpGet("GetById/{FlightId}")]
+    public async Task<IActionResult> GetById(int FlightId)
     {
-        var result = await _service.GetByIdAsync(flightId);
+        try
+        {
+            var item = await _service.GetByIdAsync(FlightId);
 
-        if (result == null)
-            return NotFound();
-
-        return Ok(result);
+            return Ok(new ApiResponse<FlightDto>
+            {
+                Success = true,
+                Message = "Flight retrieved successfully",
+                Data = item
+            });
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, new ApiResponse<string>
+            {
+                Success = false,
+                Message = "Error retrieving Flight",
+                Error = new ApiError
+                {
+                    Code = "500",
+                    Details = ex.Message
+                }
+            });
+        }
     }
 
     [HttpPut("Update/{FlightId}")]
+   
     public async Task<IActionResult> Update( int FlightId, FlightDto dto)
     {
-        var result = await _service.UpdateAsync(dto);
+        try
+        {
 
-        if (!result)
-            return BadRequest();
+            var updated = await _service.UpdateAsync(dto);
 
-        return Ok(result);
+            if (!updated)
+            {
+                return NotFound(new ApiResponse<string>
+                {
+                    Success = false,
+                    Message = "Flight not found"
+                });
+            }
+
+            return Ok(new ApiResponse<string>
+            {
+                Success = true,
+                Message = "Flight updated successfully"
+            });
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, new ApiResponse<string>
+            {
+                Success = false,
+                Message = "Error updating Flight",
+                Error = new ApiError
+                {
+                    Code = "500",
+                    Details = ex.Message
+                }
+            });
+        }
     }
 
-    [HttpDelete("Delete/{flightId}")]
-    public async Task<IActionResult> Delete(int flightId )
+
+
+    [HttpDelete("Delete/{FlightId}")]
+   
+    public async Task<IActionResult> Delete(int FlightId)
     {
-        var result = await _service.DeleteAsync(flightId);
+        try
+        {
+            var deleted = await _service.DeleteAsync(FlightId);
 
-        if (!result)
-            return NotFound();
+            if (!deleted)
+            {
+                return NotFound(new ApiResponse<string>
+                {
+                    Success = false,
+                    Message = "Item not found"
+                });
+            }
 
-        return Ok(result);
+            return Ok(new ApiResponse<string>
+            {
+                Success = true,
+                Message = "Item deleted successfully"
+            });
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, new ApiResponse<string>
+            {
+                Success = false,
+                Message = "Error deleting item",
+                Error = new ApiError
+                {
+                    Code = "500",
+                    Details = ex.Message
+                }
+            });
+        }
     }
-
     [HttpGet("GetAllPaged")]
     public async Task<IActionResult> GetAllPaged(
         string? flightNumber,
@@ -74,16 +191,35 @@ public class FlightController : ControllerBase
         bool? isActive,
         int pageNumber = 1,
         int pageSize = 10)
-    {
-        var result = await _service.GetAllPagedAsync(
-            flightNumber,
-            airlineName,
-            sourceAirport,
-            destinationAirport,
-            isActive,
-            pageNumber,
-            pageSize);
+    { 
+     try
+            {
+                var result = await _service.GetAllPagedAsync(
+                    flightNumber, airlineName, sourceAirport, destinationAirport, isActive, pageNumber, pageSize);
 
-        return Ok(result);
+                return Ok(new ApiResponse<IEnumerable<FlightDto>>
+                {
+                    Success = true,
+                    Message = "Flight retrieved successfully",
+                    Data = result.Data,
+                    TotalRecords = result.TotalRecords
+    });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new ApiResponse<string>
+                {
+                    Success = false,
+                    Message = "Error retrieving Flight",
+                    Error = new ApiError
+                    {
+                        Code = "500",
+                        Details = ex.Message
+                     }
+                });
+            }
+        }
     }
-}
+
+
+
