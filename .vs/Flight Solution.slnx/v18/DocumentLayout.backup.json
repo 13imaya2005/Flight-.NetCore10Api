@@ -1,16 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\Flight Project\\Flight Solution\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{AB8EAC0F-A007-4895-9F58-7C8A5B295B87}|Flight_API\\Flight_API.csproj|d:\\flight project\\flight solution\\flight_api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AB8EAC0F-A007-4895-9F58-7C8A5B295B87}|Flight_API\\Flight_API.csproj|solutionrelative:flight_api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AB8EAC0F-A007-4895-9F58-7C8A5B295B87}|Flight_API\\Flight_API.csproj|d:\\flight project\\flight solution\\flight_api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{AB8EAC0F-A007-4895-9F58-7C8A5B295B87}|Flight_API\\Flight_API.csproj|solutionrelative:flight_api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -18,34 +9,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": -1,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "launchSettings.json",
-              "DocumentMoniker": "D:\\Flight Project\\Flight Solution\\Flight_API\\Properties\\launchSettings.json",
-              "RelativeDocumentMoniker": "Flight_API\\Properties\\launchSettings.json",
-              "ToolTip": "D:\\Flight Project\\Flight Solution\\Flight_API\\Properties\\launchSettings.json",
-              "RelativeToolTip": "Flight_API\\Properties\\launchSettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAbAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-07-12T08:47:43.982Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Flight Project\\Flight Solution\\Flight_API\\Program.cs",
-              "RelativeDocumentMoniker": "Flight_API\\Program.cs",
-              "ToolTip": "D:\\Flight Project\\Flight Solution\\Flight_API\\Program.cs",
-              "RelativeToolTip": "Flight_API\\Program.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAABsAAAATAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-12T08:37:09.109Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:1133910622:0:{83107a3e-496a-485e-b455-16ddb978e55e}"

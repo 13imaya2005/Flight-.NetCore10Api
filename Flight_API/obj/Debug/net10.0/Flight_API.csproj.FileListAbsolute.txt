@@ -163,3 +163,4 @@ D:\Flight Project\Flight Solution\Flight_API\obj\Debug\net10.0\refint\Flight_API
 D:\Flight Project\Flight Solution\Flight_API\obj\Debug\net10.0\Flight_API.pdb
 D:\Flight Project\Flight Solution\Flight_API\obj\Debug\net10.0\Flight_API.genruntimeconfig.cache
 D:\Flight Project\Flight Solution\Flight_API\obj\Debug\net10.0\ref\Flight_API.dll
+D:\Flight Project\Flight Solution\Flight_API\obj\Debug\net10.0\Flight_API.sourcelink.json
